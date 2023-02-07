@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-	*_isupper - checks for uppercase
+	* mul - multiplies integers
 	* main - check the code
 	* @a: factor
 	* @b: factor
@@ -11,5 +11,5 @@
 int mul(int a, int b)
 
 {
-	return (a*b);
+	return (a * b);
 }
