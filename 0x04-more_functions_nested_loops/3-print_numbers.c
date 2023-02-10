@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-	* print_numbers - prints (0) through (9)
+	* print_numbers - prints specifieed number sequence
 	*  main - check the code
 	*  @s: integer
 	*  Return: (0) through (9) followed by a newline
@@ -11,12 +11,12 @@
 void print_numbers(void)
 
 {
-	int s = '0';
+	int s;
 
-	while (s <= '9')
+
+	for (s = 0; s <= 9; s++)
 	{
-		_putchar (s);
-			s++;
+		_putchar(s);
 	}
-	_putchar ('\n');
+	_putchar('\n');
 }
