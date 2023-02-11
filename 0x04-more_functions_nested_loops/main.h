@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+void more_numbers(void);
 int _isupper(int c);
 int _putchar(char c);
 int _isupper(int c);
