@@ -1,3 +1,4 @@
 #!/bin/bash
 
-gcc -c *.c && ar rcs liballa.a *.o
+gcc -c *.c | ar rc liballa.a *.o
+ranlib liballa.a
