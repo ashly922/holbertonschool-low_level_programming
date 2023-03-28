@@ -6,6 +6,19 @@
 #include <unistd.h>
 
 /**
+ *  structures for task 4
+ */
+typedef struct {
+    char *key;
+    char *value;
+} hash_node_t;
+
+typedef struct {
+    hash_node_t **nodes;
+    int size;
+} hash_table_t;
+
+/**
  * struct hash_node_s - Node of a hash table
  *
  * @key: The key, string
