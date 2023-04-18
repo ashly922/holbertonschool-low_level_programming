@@ -1,33 +1,32 @@
 #include "hash_tables.h"
 
-typedef struct {
-    char *key;
-    char *value;
-    struct hash_node_t *next;
-} hash_node_t;
+/**
+ * hash_table_print - prints a hash table
+ * @ht: pntr to table
+ * Return: void
+ */
 
-typedef struct {
-    hash_node_t **nodes;
-    int size;
-} hash_table_t;
+void hash_table_print(const hash_table_t *ht)
+{
+	hash_node_t *search;
+	int flag = 1;
+	unsigned long int index;
 
-void hash_table_print(const hash_table_t *ht) {
-    if (ht == NULL) {
-        return;
-    }
-    for (int i = 0; i < ht->size; i++) {
-        hash_node_t *node = ht->nodes[i];
-        if (node == NULL) {
-            continue;
-        }
-        printf("[%d]: ", i);
-        while (node) {
-            printf("('%s': '%s')", node->key, node->value);
-            if (node->next) {
-                printf(" -> ");
-            }
-            node = node->next;
-        }
-        printf("\n");
-    }
+	if (!ht)
+		return;
+	printf("{");
+
+	for (index = 0; index < ht->size; index++)
+	{
+		search = ht->array[index];
+		while (search != NULL)
+		{
+			if (flag == 0)
+				printf(", ");
+			printf("'%s': '%s'", search->key, search->value);
+			flag = 0;
+			search = search->next;
+		}
+	}
+	printf("}\n");
 }
